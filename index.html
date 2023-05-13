@@ -1,0 +1,183 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Tiffany &amp; Leon are getting married!</title>
+    <link rel="stylesheet" type="text/css" media="all" href="style.css" />
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+</head>
+<!-- Website Developed By Shuvo Sarker. mailto ssworkmail22@gmail.com -->
+
+<body>
+    <div class="preloader">
+        <h1>Page is loading...keep your patience</h1>
+        <img src="images/heart.png" alt="loading" id="heart">
+    </div>
+    <div id="container">
+        <div id="section1">
+            <div id="kg" title="CLICK TO MAKE A FLY"></div>
+            <div id="lunaplane">
+                <a id="btn-weekend" href="#section2">Wedding Day <span class="heartSymbol hs1"></span>;</a>
+                <a id="btn-travel" href="#section3">Travel<span class="heartSymbol hs2"></span>;</a>
+                <a id="btn-registry" href="#section4">Registry</a>
+            </div>
+            <img id="datelocation" src="images/datelocation.png" alt="June 5 2011, Cherry Valley CA" />
+
+        </div>
+        <!--End section1-->
+        <div id="section2">
+            <div class="nav" id="nav2">
+                <a class="up" id="up2" href="#section1"></a>
+                <a class="down" id="down2" href="#section3"></a>
+            </div>
+            <!--End nav-dl-->
+            <div id="joinus">
+                <!--<a id="btn-rsvp" href="#" class="contact">RSVP Here!</a>-->
+            </div>
+            <img id="cupcakes1" src="images/cupcakes.png" alt="Cupcakes!" />
+        </div>
+        <!--End section2-->
+        <div id="section3">
+            <div class="nav" id="nav3">
+                <a class="up" id="up3" href="#section2"></a>
+                <a class="down" id="down3" href="#section4"></a>
+            </div>
+            <!--End nav-dl-->
+            <div id="travelinfo">
+                <a id="btn-pearson" href="https://goo.gl/maps/N6Jn8EJfaqtDkvtV9" target="_blank">Pearson Airport</a>
+                <a id="btn-downtown" href="https://goo.gl/maps/56K8xcVde83BixCw9" target="_blank">Downtown Airport</a>
+
+            </div>
+            <img id="bunnyballoon" src="images/bunnyballoon.png" alt="Bunnies!" />
+        </div>
+        <!--End section3-->
+       
+        <div id="section4">
+            <div class="nav" id="nav5">
+                <a class="up" id="up5" href="#section3"></a>
+                <a class="top" id="down5" href="#section1"></a>
+            </div>
+            <!--End nav-dl-->
+            <div id="registry">
+                <a id="btn-rsvp" href="https://withjoy.com/tiffany-and-leon/rsvp" target="_blank">Honeyfund</a>
+            </div>
+        </div>
+
+        <div id="section5" style="display: none;">
+            <h1>This Website Develped By <a href="">Shuvo Sarker</a></h1>
+        </div>
+    </div>
+    <!--End container-->
+    <div id="clouds"></div>
+    <script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+    <script type='text/javascript' src='js/contact.js'></script>
+    <script>
+        window.addEventListener('load', function () {
+            $('.preloader').hide()
+        })
+
+        function loaderAnime() {
+            $('#heart').animate({
+                opacity: '0.5'
+            }, 1000, 'swing', function () {
+                $('#heart').animate({
+                    opacity: '1'
+                }, 200, 'swing', loaderAnime)
+            })
+
+
+        }
+
+
+        function makeParallax() {
+            const couple = document.getElementById('kg')
+            let num;
+            let shifting = setInterval(() => {
+
+
+                $('#kg').css('transform',
+                    `translateX(${getRndInteger(-40,40)}px) translateY(${getRndInteger(-50,50)}px)`)
+                $('#cupcakes1').css('transform',
+                    `translateX(${getRndInteger(-40,40)}px) translateY(${getRndInteger(-50,50)}px)`)
+
+
+            }, 1000);
+
+            couple.onclick = function () {
+                clearInterval(shifting)
+                $('#kg').css('transform', `translateX(500px) translateY(-1500px)`)
+                setTimeout(function () {
+                    $('#kg').css('transform', `translateX(-1800px) translateY(1000px)`)
+
+                }, 500)
+                setTimeout(makeParallax, 1000)
+            }
+        }
+        let cloudval = setInterval(cloud, 500)
+        let pos = 0;
+
+        function cloud() {
+            const cloud = document.getElementById('clouds');
+
+
+            if (pos == 90) {
+                cloud.style.opacity = 0;
+                cloud.style.left = 0;
+                pos = 0
+
+            } else {
+                pos++;
+                cloud.style.left = pos + '%';
+                cloud.style.opacity = 1;
+            }
+        }
+        makeParallax()
+
+        function bunny() {
+            $('#bunnyballoon').animate({
+                top: '300px',
+                rotate: `${getRndInteger(-15,15)}deg`
+            }, 3500, 'swing', function () {
+                $('#bunnyballoon').animate({
+                    top: '100px',
+                    rotate: `${getRndInteger(-15,15)}deg`
+                }, 3500, 'swing', bunny)
+            })
+        }
+
+        bunny()
+
+        function cupcakeRotate() {
+            $('#cupcakes1').animate({
+                // left:'680px',
+                transform: "rotateY(360deg)"
+            }, 8500, 'swing', function () {
+                $('#cupcakes1').animate({
+                    // left:'40px',
+                    transform: "rotateY(60deg)"
+                }, 8500, 'swing', cupcakeRotate)
+            })
+        }
+        cupcakeRotate()
+
+        function lunaplane() {
+            $('#lunaplane').animate({
+                rotate: `${getRndInteger(-25,15)}deg`,
+            }, 2500, 'swing', function () {
+                $('#lunaplane').animate({
+                    rotate: `${getRndInteger(0,25)}deg`,
+                }, 2500, 'swing', lunaplane)
+            })
+        }
+
+        lunaplane()
+
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+    </script>
+</body>
+
+</html>

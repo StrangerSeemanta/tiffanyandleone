@@ -1,0 +1,636 @@
+@charset "UTF-8";
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	pointer-events: none;
+	z-index: 111111;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 40px;
+	color: white;
+	font-size: 30px;
+}
+
+#heart {
+	display: block;
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+	background: url('heart.png') no-repeat;
+	animation: fadeIn 3s linear infinite
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+body {
+	line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-weight: normal;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after {
+	content: '';
+	content: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a img {
+	border: none;
+}
+
+a:active,
+a:focus {
+	outline: 0px;
+}
+
+/* Layout 
+----------------------------- */
+
+body {
+	background: #9fddea url(images/bg-bottom.png) bottom center no-repeat;
+	overflow-x: hidden;
+	height: 7126px;
+	max-height: 7126px;
+}
+
+#container {
+	width: 1000px;
+	margin: 0px auto;
+	position: relative;
+	overflow: visible;
+	z-index: 2;
+}
+
+/*Sections
+----------------------------*/
+#section1 {
+	width: 100%;
+	height: 2392px;
+	position: relative;
+}
+
+#section2 {
+	width: 100%;
+	height: 1804px;
+	position: relative;
+}
+
+#section3 {
+	width: 100%;
+	height: 1990px;
+	position: relative;
+}
+
+#section4 {
+	width: 100%;
+	height: 940px;
+	position: relative;
+}
+
+#section5 {
+	width: 100%;
+	height: 40px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+#section5 h1 {
+	color: white;
+	height: 40px;
+	transition: all 0.5s linear;
+	animation: transit 5s linear infinite;
+}
+
+#section5 h1 a {
+	text-decoration: none;
+	opacity: 1;
+	color: navy;
+	transition: all 0.5s linear;
+
+}
+
+#section5 h1:hover {
+	opacity: 1;
+	animation: none;
+}
+
+#section5 h1 a:hover {
+
+	color: maroon;
+}
+
+@keyframes transit {
+	0% {
+		opacity: 0.1;
+	}
+
+	50% {
+		opacity: 0.7;
+	}
+
+	100% {
+		opacity: 0.2;
+	}
+}
+
+/* Images
+------------------------------*/
+#kg {
+	position: absolute;
+	top: 20px;
+	left: 50px;
+	width: 487px;
+	height: 755px;
+	background: url(images/tiffany.png) 0px 0px no-repeat;
+	transition: all 1s linear;
+	cursor: pointer;
+}
+
+#lunaplane {
+	position: absolute;
+	top: 403px;
+	right: 78px;
+	width: 433px;
+	height: 358px;
+	background: url(images/lunaplane.png) 0px 0px no-repeat;
+	transform-style: preserve-3d;
+}
+
+#datelocation {
+	position: absolute;
+	top: 206px;
+	right: 50px;
+	z-index: 1;
+}
+
+#joinus {
+	position: absolute;
+	left: 195px;
+	top: 80px;
+	background: url(images/joinus.png) no-repeat;
+	width: 823px;
+	height: 427px;
+}
+
+#btn-rsvp {
+	position: absolute;
+	display: block;
+	width: 148px;
+	height: 87px;
+	top: 198px;
+	right: 41px;
+	background: url(images/btn-rsvp.png) 0px 0px no-repeat;
+	text-indent: -9999em;
+}
+
+#btn-rsvp:hover {
+	background-position: 0px -87px;
+}
+
+#travelinfo {
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	margin-left: -31px;
+	background: url(images/travelinfo.png);
+	width: 810px;
+	height: 614px;
+}
+
+#btn-pearson {
+	position: absolute;
+	display: block;
+	width: 362px;
+	height: 45px;
+	text-indent: -9999em;
+	background: url(images/pearson.png) 0px 0px no-repeat;
+	top: 309px;
+	left: 136px;
+}
+
+#btn-pearson:hover {
+	background-position: 0px -44px;
+}
+
+#btn-downtown {
+	position: absolute;
+	display: block;
+	width: 426px;
+	height: 38px;
+	text-indent: -9999em;
+	background: url(images/downtown.png) 0px 0px no-repeat;
+	top: 389px;
+	left: 137px;
+}
+
+#btn-downtown:hover {
+	background-position: 0px -38px;
+}
+
+#hsresort,
+#registry {
+	position: absolute;
+	left: 105px;
+	top: 80px;
+	width: 810px;
+	height: 642px;
+	background: url(images/registry.png);
+	background-repeat: no-repeat;
+	transform: scale(1.3);
+}
+
+#btn-trails {
+	position: absolute;
+	display: block;
+	height: 200px;
+	width: 146px;
+	background: url(images/btn-trails.png) 0px 0px no-repeat;
+	text-indent: -9999em;
+	right: 372px;
+	top: 447px;
+}
+
+#btn-trails:hover {
+	background-position: 0px -200px;
+}
+
+#btn-property {
+	position: absolute;
+	display: block;
+	width: 158px;
+	height: 144px;
+	background: url(images/btn-property.png) 0px 0px no-repeat;
+	text-indent: -9999em;
+	left: 146px;
+	top: 498px;
+}
+
+#btn-property:hover {
+	background-position: 0px -144px;
+}
+
+/* #registry {
+	position:absolute;
+	left:3px;
+	top:80px;
+	width:810px;
+	height:281px;
+	transform: scale(1.3);
+} */
+#btn-rsvp {
+	position: absolute;
+	display: block;
+	width: 162px;
+	height: 21px;
+	text-indent: -9999em;
+	background: url(images/btn-rsvp.png) 0px 0px no-repeat;
+	top: 116px;
+	left: 487px;
+}
+
+#btn-rsvp:hover {
+	background-position: 0px -21px;
+}
+
+/* Floating Critters
+----------------------------------*/
+
+#cupcakes1 {
+	position: absolute;
+	top: 530px;
+	left: 30px;
+	transform: scale(0.8);
+	transition: all 1s linear;
+}
+
+#bunnyballoon {
+	position: absolute;
+	top: 138px;
+	left: 778px;
+}
+
+#rocketpig {
+	position: absolute;
+	left: 0px;
+	top: 180px;
+	transform: scale(1.4);
+}
+
+/* Top Links
+--------------------------*/
+#btn-weekend {
+	display: block;
+	width: 113px;
+	height: 43px;
+	background: url(images/btn-weekend.png) 0px 0px no-repeat;
+	cursor: pointer;
+	text-indent: -9999em;
+	position: absolute;
+	top: 42px;
+	left: 105px;
+	transform: scale(1.25);
+	border-radius: 30%;
+	rotate: -2deg;
+}
+
+#btn-travel {
+	display: block;
+	width: 69px;
+	height: 43px;
+	background: url(images/btn-travel.png) 0px 0px no-repeat;
+	cursor: pointer;
+	text-indent: -9999em;
+	position: absolute;
+	top: 43px;
+	left: 238px;
+	rotate:10deg;
+}
+
+span.heartSymbol {
+
+	position: absolute;
+	top: 10px;
+	left: -30px;
+	width: 30px;
+	height: 30px;
+	background: url(images/heartico.png) 0px 0px no-repeat;
+	transform: scale(0.5);
+}
+span.heartSymbol.hs1{
+	top: 6px;
+	left: -24px;
+	border-radius: 20px;
+}
+/* #btn-resort {
+	display:block;
+	width:66px;
+	height:43px;
+	background:url(images/btn-resort.png) 0px 0px no-repeat;
+	cursor:pointer;
+	text-indent:-9999em;
+	position:absolute;
+	top:47px;
+	left:259px;
+} */
+#btn-registry {
+	display: block;
+	width: 81px;
+	height: 59px;
+	background: url(images/btn-registry.png) 0px 0px no-repeat;
+	cursor: pointer;
+	text-indent: -9999em;
+	position: absolute;
+	top: 60px;
+	left: 338px;
+}
+
+#btn-weekend:hover,
+#btn-travel:hover,
+#btn-resort:hover {
+	background-position: 0px -43px;
+}
+
+#btn-registry:hover {
+	background-position: 0px -59px;
+}
+
+/* Links
+-----------------*/
+#clouds {
+	position: absolute;
+	width: 98%;
+	height: 6507px;
+	background: transparent url(images/clouds.png) 0 0px repeat-x;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	transition: all 500ms linear;
+}
+
+@keyframes sliding {
+	from {
+		left: 0;
+	}
+
+	to {
+		left: 100%;
+	}
+}
+
+a.up {
+	display: block;
+	width: 86px;
+	height: 36px;
+	background: url(images/up.png) 0px 0px no-repeat;
+	cursor: pointer;
+	animation: btnUp 2s linear infinite;
+}
+
+a.up:hover,
+a.up:active {
+	background-position: 0px -36px;
+}
+
+@keyframes btnUp {
+	from {
+		transform: translateY(40px);
+	}
+
+	to {
+		transform: translateY(-20px);
+	}
+}
+
+a.down {
+	display: block;
+	width: 86px;
+	height: 39px;
+	background: url(images/down.png) 0px 0px no-repeat;
+	cursor: pointer;
+	animation: btndown 2s linear infinite;
+	margin-top: 10px !important;
+}
+
+a.top {
+	display: block;
+	width: 86px;
+	height: 39px;
+	background: url(images/top.png) 0px 0px no-repeat;
+	cursor: pointer;
+	animation: btnUp 2s linear infinite;
+}
+
+a.down:hover,
+a.down:active,
+a.top:hover,
+a.top:active {
+	background-position: 0px -38px;
+}
+
+@keyframes btndown {
+	from {
+		transform: translateY(10px);
+	}
+
+	to {
+		transform: translateY(40px);
+	}
+}
+
+.nav {
+	width: 86px;
+	height: 75px;
+}
+
+#nav2 {
+	position: absolute;
+	top: 400px;
+	right: 0px;
+	margin-right: -75px;
+	z-index: 10;
+}
+
+#nav3 {
+	position: absolute;
+	top: 576px;
+	left: 770px;
+	z-index: 10;
+}
+
+#nav4 {
+	position: absolute;
+	top: 616px;
+	right: 0px;
+	margin-right: -75px;
+	z-index: 10;
+}
+
+#nav5 {
+	position: absolute;
+	top: 270px;
+	left: 990px;
+	z-index: 10;
+}
+
+/* Developed By Shuvo Sarker - ssworkmail22@gmail.com <..@2023 */
