@@ -169,8 +169,8 @@ a:focus {
 body {
 	background: #9fddea url(images/bg-bottom.png) bottom center no-repeat;
 	overflow-x: hidden;
-	height: 7126px;
-	max-height: 7126px;
+	height: 7725px;
+	max-height: 7725px;
 }
 
 #container {
@@ -185,25 +185,25 @@ body {
 ----------------------------*/
 #section1 {
 	width: 100%;
-	height: 2392px;
+	height: 2592px;
 	position: relative;
 }
 
 #section2 {
 	width: 100%;
-	height: 1804px;
+	height: 2004px;
 	position: relative;
 }
 
 #section3 {
 	width: 100%;
-	height: 1990px;
+	height: 1890px;
 	position: relative;
 }
 
 #section4 {
 	width: 100%;
-	height: 940px;
+	height: 1040px;
 	position: relative;
 }
 
@@ -520,7 +520,7 @@ span.heartSymbol.hs1{
 #clouds {
 	position: absolute;
 	width: 98%;
-	height: 6507px;
+	height:5507px;
 	background: transparent url(images/clouds.png) 0 0px repeat-x;
 	top: 0px;
 	left: 0px;
@@ -552,15 +552,7 @@ a.up:active {
 	background-position: 0px -36px;
 }
 
-@keyframes btnUp {
-	from {
-		transform: translateY(40px);
-	}
 
-	to {
-		transform: translateY(-20px);
-	}
-}
 
 a.down {
 	display: block;
@@ -588,15 +580,7 @@ a.top:active {
 	background-position: 0px -38px;
 }
 
-@keyframes btndown {
-	from {
-		transform: translateY(10px);
-	}
 
-	to {
-		transform: translateY(40px);
-	}
-}
 
 .nav {
 	width: 86px;
